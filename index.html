@@ -6,7 +6,7 @@
   <title>Pod Kątem Ostrym – Beskid Niski</title>
   <meta
     name="description"
-    content="Pod Kątem Ostrym – dom na wyłączność w Beskidzie Niskim. Sprawdź dostępność i ceny na Booking.com."
+    content="Pod Kątem Ostrym – dom na wyłączność w Beskidzie Niskim. Sprawdź terminy, zadzwoń lub napisz na WhatsApp."
   />
 
   <style>
@@ -36,7 +36,7 @@
     }
 
     .panel {
-      width: min(460px, 100%);
+      width: min(500px, 100%);
       background: rgba(10, 10, 10, 0.72);
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
@@ -71,7 +71,7 @@
     }
 
     .features {
-      margin: 0 0 28px;
+      margin: 0 0 26px;
       padding: 0;
       list-style: none;
       display: grid;
@@ -84,70 +84,113 @@
       color: rgba(255, 255, 255, 0.92);
     }
 
-    .booking-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      width: 100%;
-      min-height: 74px;
-      padding: 16px 22px;
-      background: #003b95;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 14px;
-      box-shadow: 0 14px 30px rgba(0, 32, 90, 0.35);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    .section-label {
+      margin: 28px 0 14px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
     }
 
-    .booking-button:hover {
+    .booking-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .booking-text {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.05;
+      color: #fff;
+    }
+
+    .booking-icon-button {
+      width: 74px;
+      height: 74px;
+      border-radius: 16px;
+      background: #003b95;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 14px 30px rgba(0, 32, 90, 0.35);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      flex: 0 0 74px;
+    }
+
+    .booking-icon-button:hover {
       background: #0a4aad;
       transform: translateY(-2px);
       box-shadow: 0 18px 36px rgba(0, 32, 90, 0.42);
     }
 
-    .booking-button:active {
-      transform: translateY(0);
-    }
-
-    .booking-button img {
-      width: 40px;
-      height: 40px;
+    .booking-icon-button img {
+      width: 52px;
+      height: 52px;
       object-fit: contain;
-      border-radius: 8px;
-      background: #003b95;
-      flex: 0 0 40px;
+      border-radius: 10px;
       display: block;
     }
 
-    .booking-text {
-      font-size: 19px;
-      font-weight: 800;
-      line-height: 1.15;
-      text-align: left;
-    }
-
     .subnote {
-      margin: 14px 0 0;
+      margin: 8px 0 0;
       font-size: 14px;
       line-height: 1.4;
       color: rgba(255, 255, 255, 0.76);
     }
 
-    .contact {
-      margin-top: 24px;
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.95);
-    }
-
-    .contact a {
+    .direct-title {
+      margin: 28px 0 14px;
+      font-size: 22px;
+      font-weight: 800;
       color: #fff;
-      text-decoration: none;
-      font-weight: 700;
     }
 
-    .contact a:hover {
-      text-decoration: underline;
+    .direct-buttons {
+      display: grid;
+      gap: 12px;
+    }
+
+    .direct-button {
+      display: block;
+      width: 100%;
+      min-height: 62px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .direct-button:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
+    }
+
+    .tel-button {
+      background: #1f1f1f;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .wa-button {
+      background: #25d366;
+      color: #fff;
+    }
+
+    .contact-note {
+      margin-top: 12px;
+      font-size: 14px;
+      line-height: 1.4;
+      color: rgba(255, 255, 255, 0.76);
     }
 
     @media (max-width: 900px) {
@@ -173,24 +216,32 @@
       }
 
       .booking-text {
-        font-size: 18px;
+        font-size: 24px;
       }
     }
 
     @media (max-width: 560px) {
-      .booking-button {
-        padding: 14px 16px;
-        min-height: 68px;
-      }
-
-      .booking-button img {
-        width: 34px;
-        height: 34px;
-        flex-basis: 34px;
+      .booking-row {
+        align-items: flex-start;
       }
 
       .booking-text {
-        font-size: 17px;
+        font-size: 22px;
+      }
+
+      .booking-icon-button {
+        width: 68px;
+        height: 68px;
+        flex-basis: 68px;
+      }
+
+      .booking-icon-button img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .direct-button {
+        font-size: 18px;
       }
     }
   </style>
@@ -214,17 +265,47 @@
         <li>• sprawdź dostępność i ceny online</li>
       </ul>
 
-      <a
-        <img src="booking.jpg" alt="Booking.com" />
-      </a>
+      <div class="section-label">Sprawdź terminy</div>
+
+      <div class="booking-row">
+        <div class="booking-text">Booking.com</div>
+
+        <a
+          class="booking-icon-button"
+          href="https://www.booking.com/hotel/pl/pod-katem-ostrym-ropki.pl.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Przejdź do rezerwacji na Booking.com"
+          title="Przejdź do rezerwacji na Booking.com"
+        >
+          <img src="booking.jpg" alt="Booking.com" />
+        </a>
+      </div>
 
       <p class="subnote">
-        Kliknięcie otwiera stronę rezerwacji obiektu na Booking.com.
+        Kliknij ikonę Booking.com, aby sprawdzić dostępność i ceny.
       </p>
 
-      <div class="contact">
-        Tel.: <a href="tel:+48795151097">795 151 097</a>
+      <div class="direct-title">Rezerwacja bezpośrednia</div>
+
+      <div class="direct-buttons">
+        <a class="direct-button tel-button" href="tel:+48795151097">
+          Zadzwoń: 795 151 097
+        </a>
+
+        <a
+          class="direct-button wa-button"
+          href="https://wa.me/48795151097"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp
+        </a>
       </div>
+
+      <p class="contact-note">
+        Zadzwoń lub napisz, aby zapytać o termin i szczegóły pobytu.
+      </p>
     </div>
   </section>
 </body>
