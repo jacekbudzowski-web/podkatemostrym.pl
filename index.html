@@ -1,365 +1,524 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Pod Kątem Ostrym – Beskid Niski</title>
-
-<meta name="description" content="Dom na wyłączność w Beskidzie Niskim. Sprawdź terminy na Booking lub zarezerwuj bezpośrednio.">
-
-<style>
-
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
-
-body{
-font-family:Arial,Helvetica,sans-serif;
-color:white;
-background:#111;
-}
-
-.hero{
-
-min-height:100vh;
-
-display:flex;
-justify-content:flex-end;
-align-items:center;
-
-background:
-radial-gradient(circle at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.65) 85%),
-url("dom.jpg") center/cover no-repeat;
-
-position:relative;
-
-}
-
-.panel{
-
-width:300px;
-max-width:70%;
-
-background:rgba(15,15,15,0.75);
-backdrop-filter:blur(4px);
-
-padding:28px;
-
-border-radius:20px;
-
-margin-right:60px;
-
-box-shadow:0 20px 60px rgba(0,0,0,0.45);
-
-}
-
-.location{
-
-font-size:13px;
-letter-spacing:0.08em;
-text-transform:uppercase;
-opacity:0.8;
-
-margin-bottom:12px;
-
-}
-
-h1{
-
-font-size:44px;
-line-height:1;
-font-weight:800;
-
-margin-bottom:14px;
-
-}
-
-.lead{
-
-font-size:16px;
-line-height:1.45;
-opacity:0.95;
-
-margin-bottom:18px;
-
-}
-
-.features{
-
-list-style:none;
-margin-bottom:24px;
-
-}
-
-.features li{
-
-margin-bottom:6px;
-font-size:15px;
-
-}
-
-.section-title{
-
-font-size:14px;
-font-weight:700;
-text-transform:uppercase;
-letter-spacing:0.08em;
-
-margin-bottom:12px;
-opacity:0.85;
-
-}
-
-.booking-row{
-
-display:flex;
-align-items:center;
-gap:12px;
-
-margin-bottom:6px;
-
-}
-
-.booking-text{
-
-font-size:22px;
-font-weight:800;
-
-}
-
-.booking-button{
-
-width:58px;
-height:58px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:#003b95;
-border-radius:12px;
-
-transition:0.2s;
-
-}
-
-.booking-button:hover{
-
-background:#0a4aad;
-transform:translateY(-2px);
-
-}
-
-.booking-button img{
-
-width:40px;
-height:40px;
-
-}
-
-.small-note{
-
-font-size:12px;
-opacity:0.75;
-margin-bottom:20px;
-
-}
-
-.direct-title{
-
-font-size:20px;
-font-weight:800;
-
-margin-bottom:10px;
-
-}
-
-.direct-buttons{
-
-display:flex;
-flex-direction:column;
-gap:8px;
-
-}
-
-.button{
-
-display:block;
-
-padding:14px;
-border-radius:10px;
-
-font-size:17px;
-font-weight:700;
-
-text-align:center;
-text-decoration:none;
-
-transition:0.2s;
-
-}
-
-.tel{
-
-background:#1f1f1f;
-color:white;
-
-}
-
-.tel:hover{
-
-background:#2c2c2c;
-
-}
-
-.whatsapp{
-
-background:#25D366;
-color:white;
-
-}
-
-.whatsapp:hover{
-
-background:#1fb455;
-
-}
-
-/* zdjęcie wnętrza */
-
-.corner-image{
-
-position:absolute;
-
-top:60px;
-left:60px;
-
-width:260px;
-
-border-radius:16px;
-
-box-shadow:0 25px 60px rgba(0,0,0,0.45);
-
-opacity:0.95;
-
-}
-
-@media(max-width:900px){
-
-.hero{
-
-justify-content:center;
-padding:20px;
-
-}
-
-.panel{
-
-margin:0;
-
-}
-
-.corner-image{
-
-display:none;
-
-}
-
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Pod Kątem Ostrym – Beskid Niski</title>
+  <meta
+    name="description"
+    content="Dom na wyłączność w Beskidzie Niskim. Sprawdź terminy na Booking lub zarezerwuj bezpośrednio."
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      min-height: 100%;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      background: #111;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 40px;
+      background:
+        radial-gradient(circle at center, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 90%),
+        url("dom.jpg") center/cover no-repeat;
+    }
+
+    .panel {
+      width: 380px;
+      max-width: 88%;
+      background: rgba(15,15,15,0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 28px;
+      border-radius: 20px;
+      margin-right: 60px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.08);
+      z-index: 3;
+    }
+
+    .location {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 44px;
+      line-height: 1;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .lead {
+      font-size: 16px;
+      line-height: 1.5;
+      opacity: 0.95;
+      margin-bottom: 18px;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 22px;
+    }
+
+    .features li {
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      opacity: 0.85;
+    }
+
+    .booking-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .booking-text {
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .booking-button {
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #003b95;
+      border-radius: 12px;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+
+    .booking-button:hover {
+      background: #0a4aad;
+      transform: translateY(-2px);
+    }
+
+    .booking-button img {
+      width: 40px;
+      height: 40px;
+      display: block;
+    }
+
+    .small-note {
+      font-size: 12px;
+      opacity: 0.75;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .direct-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .direct-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .button {
+      display: block;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .tel {
+      background: #1f1f1f;
+      color: white;
+    }
+
+    .tel:hover {
+      background: #2c2c2c;
+    }
+
+    .whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .whatsapp:hover {
+      background: #1fb455;
+    }
+
+    .gallery-stack {
+      position: absolute;
+      left: 40px;
+      bottom: 40px;
+      width: 300px;
+      z-index: 3;
+    }
+
+    .active-card {
+      width: 100%;
+      height: 360px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      cursor: pointer;
+    }
+
+    .active-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .thumbs {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .thumb {
+      width: 88px;
+      height: 110px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      background: rgba(255,255,255,0.04);
+      cursor: pointer;
+      padding: 0;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+      transition: transform 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
+      opacity: 0.88;
+    }
+
+    .thumb:hover {
+      transform: translateY(-2px);
+      opacity: 1;
+    }
+
+    .thumb.active {
+      border-color: rgba(255,255,255,0.9);
+      opacity: 1;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.86);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 24px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 92vw;
+      max-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      max-width: 92vw;
+      max-height: 88vh;
+      border-radius: 16px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+      display: block;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      color: #111;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      color: #111;
+      font-size: 30px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .lightbox-prev {
+      left: -70px;
+    }
+
+    .lightbox-next {
+      right: -70px;
+    }
+
+    @media (max-width: 1100px) {
+      .gallery-stack {
+        width: 250px;
+        left: 24px;
+        bottom: 24px;
+      }
+
+      .active-card {
+        height: 300px;
+      }
+
+      .thumb {
+        width: 73px;
+        height: 92px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .panel {
+        margin-right: 0;
+      }
+
+      .gallery-stack {
+        display: none;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
 </head>
-
-
 <body>
 
 <section class="hero">
 
-<img class="corner-image" src="dom2.jpg">
+  <div class="gallery-stack">
+    <div class="active-card" id="activeCard">
+      <img id="activeInterior" src="dom2.jpg" alt="Wnętrze domu">
+    </div>
 
-<div class="panel">
+    <div class="thumbs">
+      <button class="thumb active" data-index="0" data-img="dom2.jpg" type="button">
+        <img src="dom2.jpg" alt="Wnętrze 1">
+      </button>
 
-<div class="location">
-BESKID NISKI • ROPKI
-</div>
+      <button class="thumb" data-index="1" data-img="dom3.jpg" type="button">
+        <img src="dom3.jpg" alt="Wnętrze 2">
+      </button>
 
-<h1>
-Pod Kątem<br>Ostrym
-</h1>
+      <button class="thumb" data-index="2" data-img="dom4.jpg" type="button">
+        <img src="dom4.jpg" alt="Wnętrze 3">
+      </button>
+    </div>
+  </div>
 
-<div class="lead">
-Dom na wyłączność w Beskidzie Niskim.
-Spokojne miejsce dla rodzin i grup, w otoczeniu natury.
-</div>
+  <div class="panel">
+    <div class="location">BESKID NISKI • ROPKI</div>
 
-<ul class="features">
+    <h1>Pod Kątem<br>Ostrym</h1>
 
-<li>• dom na wyłączność</li>
-<li>• widok na góry i cisza wokół</li>
-<li>• idealny na spokojny wyjazd</li>
-<li>• sprawdź dostępność i ceny online</li>
+    <div class="lead">
+      Dom na wyłączność w Beskidzie Niskim.
+      Spokojne miejsce dla rodzin i grup, w otoczeniu natury.
+    </div>
 
-</ul>
+    <ul class="features">
+      <li>• dom na wyłączność</li>
+      <li>• widok na góry i cisza wokół</li>
+      <li>• idealny na spokojny wyjazd</li>
+      <li>• sprawdź dostępność i ceny online</li>
+    </ul>
 
-<div class="section-title">
-Sprawdź terminy
-</div>
+    <div class="section-title">Sprawdź terminy</div>
 
-<div class="booking-row">
+    <div class="booking-row">
+      <div class="booking-text">Booking.com</div>
 
-<div class="booking-text">
-Booking.com
-</div>
+      <a
+        class="booking-button"
+        href="https://www.booking.com/hotel/pl/pod-katem-ostrym-ropki.pl.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Przejdź do Booking.com"
+      >
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Booking.com_Icon_2022.svg" alt="Booking.com">
+      </a>
+    </div>
 
-<a
-class="booking-button"
-href="https://www.booking.com/hotel/pl/pod-katem-ostrym-ropki.pl.html"
-target="_blank"
->
+    <div class="small-note">
+      Kliknij ikonę Booking aby sprawdzić dostępność i ceny.
+    </div>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Booking.com_Icon_2022.svg">
+    <div class="direct-title">Rezerwacja bezpośrednia</div>
 
-</a>
+    <div class="direct-buttons">
+      <a class="button tel" href="tel:+48795151097">Zadzwoń: 795 151 097</a>
 
-</div>
-
-<div class="small-note">
-Kliknij ikonę Booking aby sprawdzić dostępność i ceny.
-</div>
-
-<div class="direct-title">
-Rezerwacja bezpośrednia
-</div>
-
-<div class="direct-buttons">
-
-<a
-class="button tel"
-href="tel:+48795151097"
->
-Zadzwoń: 795 151 097
-</a>
-
-<a
-class="button whatsapp"
-href="https://wa.me/48795151097"
-target="_blank"
->
-WhatsApp
-</a>
-
-</div>
-
-</div>
+      <a
+        class="button whatsapp"
+        href="https://wa.me/48795151097"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        WhatsApp
+      </a>
+    </div>
+  </div>
 
 </section>
 
-</body>
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Zamknij">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Poprzednie zdjęcie">‹</button>
 
+    <img class="lightbox-image" id="lightboxImage" src="dom2.jpg" alt="Wnętrze domu">
+
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Następne zdjęcie">›</button>
+  </div>
+</div>
+
+<script>
+  const images = ["dom2.jpg", "dom3.jpg", "dom4.jpg"];
+  let currentIndex = 0;
+
+  const activeInterior = document.getElementById("activeInterior");
+  const activeCard = document.getElementById("activeCard");
+  const thumbs = document.querySelectorAll(".thumb");
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxClose = document.getElementById("lightboxClose");
+  const lightboxPrev = document.getElementById("lightboxPrev");
+  const lightboxNext = document.getElementById("lightboxNext");
+
+  function setActiveImage(index) {
+    currentIndex = index;
+    activeInterior.src = images[index];
+    lightboxImage.src = images[index];
+
+    thumbs.forEach((thumb) => thumb.classList.remove("active"));
+    if (thumbs[index]) {
+      thumbs[index].classList.add("active");
+    }
+  }
+
+  thumbs.forEach((thumb, index) => {
+    thumb.addEventListener("click", () => {
+      setActiveImage(index);
+    });
+  });
+
+  activeCard.addEventListener("click", () => {
+    lightbox.classList.add("open");
+    lightboxImage.src = images[currentIndex];
+  });
+
+  lightboxClose.addEventListener("click", () => {
+    lightbox.classList.remove("open");
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove("open");
+    }
+  });
+
+  lightboxPrev.addEventListener("click", (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    setActiveImage(currentIndex);
+  });
+
+  lightboxNext.addEventListener("click", (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    setActiveImage(currentIndex);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("open")) return;
+
+    if (e.key === "Escape") {
+      lightbox.classList.remove("open");
+    }
+
+    if (e.key === "ArrowLeft") {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      setActiveImage(currentIndex);
+    }
+
+    if (e.key === "ArrowRight") {
+      currentIndex = (currentIndex + 1) % images.length;
+      setActiveImage(currentIndex);
+    }
+  });
+</script>
+
+</body>
 </html>
