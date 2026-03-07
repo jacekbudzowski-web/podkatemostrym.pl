@@ -1,309 +1,327 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pod Kątem Ostrym – Beskid Niski</title>
-  <meta
-    name="description"
-    content="Pod Kątem Ostrym – dom na wyłączność w Beskidzie Niskim. Sprawdź terminy, zadzwoń lub napisz na WhatsApp."
-  />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>Pod Kątem Ostrym – Beskid Niski</title>
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      min-height: 100%;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #111;
-      color: #fff;
-    }
+<meta name="description" content="Dom na wyłączność w Beskidzie Niskim. Sprawdź terminy na Booking lub zarezerwuj bezpośrednio.">
 
-    .hero {
-      min-height: 100vh;
-      background:
-        linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.55)),
-        url("dom.jpg") center center / cover no-repeat,
-        linear-gradient(135deg, #2a2a2a, #111);
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 40px;
-    }
+<style>
 
-    .panel {
-      width: min(500px, 100%);
-      background: rgba(10, 10, 10, 0.72);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
-      padding: 34px 30px;
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
-    }
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
-    .eyebrow {
-      margin: 0 0 14px;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.82);
-    }
+body{
+font-family:Arial,Helvetica,sans-serif;
+color:white;
+background:#111;
+}
 
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(34px, 5vw, 62px);
-      line-height: 0.98;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:flex-end;
+align-items:center;
 
-    .lead {
-      margin: 0 0 22px;
-      font-size: 18px;
-      line-height: 1.45;
-      color: rgba(255, 255, 255, 0.92);
-    }
+background:
+linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.55)),
+url("dom.jpg") center/cover no-repeat;
+}
 
-    .features {
-      margin: 0 0 26px;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
+.panel{
 
-    .features li {
-      font-size: 17px;
-      line-height: 1.35;
-      color: rgba(255, 255, 255, 0.92);
-    }
+width:460px;
+max-width:92%;
 
-    .section-label {
-      margin: 28px 0 14px;
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.85);
-    }
+background:rgba(15,15,15,0.75);
+backdrop-filter:blur(4px);
 
-    .booking-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
-    }
+padding:36px;
+border-radius:20px;
 
-    .booking-text {
-      font-size: 28px;
-      font-weight: 800;
-      line-height: 1.05;
-      color: #fff;
-    }
+margin-right:60px;
 
-    .booking-icon-button {
-      width: 74px;
-      height: 74px;
-      border-radius: 16px;
-      background: #003b95;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 14px 30px rgba(0, 32, 90, 0.35);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-      flex: 0 0 74px;
-    }
+box-shadow:0 20px 60px rgba(0,0,0,0.45);
 
-    .booking-icon-button:hover {
-      background: #0a4aad;
-      transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(0, 32, 90, 0.42);
-    }
+}
 
-    .booking-icon-button img {
-      width: 52px;
-      height: 52px;
-      object-fit: contain;
-      border-radius: 10px;
-      display: block;
-    }
+.location{
 
-    .subnote {
-      margin: 8px 0 0;
-      font-size: 14px;
-      line-height: 1.4;
-      color: rgba(255, 255, 255, 0.76);
-    }
+font-size:14px;
+letter-spacing:0.08em;
+text-transform:uppercase;
+opacity:0.8;
 
-    .direct-title {
-      margin: 28px 0 14px;
-      font-size: 22px;
-      font-weight: 800;
-      color: #fff;
-    }
+margin-bottom:14px;
 
-    .direct-buttons {
-      display: grid;
-      gap: 12px;
-    }
+}
 
-    .direct-button {
-      display: block;
-      width: 100%;
-      min-height: 62px;
-      padding: 16px 18px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: 800;
-      line-height: 1.2;
-      text-align: center;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
-    }
+h1{
 
-    .direct-button:hover {
-      transform: translateY(-2px);
-      opacity: 0.96;
-    }
+font-size:54px;
+line-height:1;
+font-weight:800;
 
-    .tel-button {
-      background: #1f1f1f;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
+margin-bottom:16px;
 
-    .wa-button {
-      background: #25d366;
-      color: #fff;
-    }
+}
 
-    .contact-note {
-      margin-top: 12px;
-      font-size: 14px;
-      line-height: 1.4;
-      color: rgba(255, 255, 255, 0.76);
-    }
+.lead{
 
-    @media (max-width: 900px) {
-      .hero {
-        justify-content: center;
-        padding: 22px;
-      }
+font-size:18px;
+line-height:1.45;
+opacity:0.95;
 
-      .panel {
-        padding: 26px 22px;
-      }
+margin-bottom:20px;
 
-      h1 {
-        font-size: 44px;
-      }
+}
 
-      .lead {
-        font-size: 17px;
-      }
+.features{
 
-      .features li {
-        font-size: 16px;
-      }
+list-style:none;
+margin-bottom:28px;
 
-      .booking-text {
-        font-size: 24px;
-      }
-    }
+}
 
-    @media (max-width: 560px) {
-      .booking-row {
-        align-items: flex-start;
-      }
+.features li{
 
-      .booking-text {
-        font-size: 22px;
-      }
+margin-bottom:8px;
+font-size:16px;
 
-      .booking-icon-button {
-        width: 68px;
-        height: 68px;
-        flex-basis: 68px;
-      }
+}
 
-      .booking-icon-button img {
-        width: 48px;
-        height: 48px;
-      }
+.section-title{
 
-      .direct-button {
-        font-size: 18px;
-      }
-    }
-  </style>
+font-size:15px;
+font-weight:700;
+text-transform:uppercase;
+letter-spacing:0.08em;
+
+margin-bottom:14px;
+opacity:0.85;
+
+}
+
+.booking-row{
+
+display:flex;
+align-items:center;
+gap:14px;
+
+margin-bottom:6px;
+
+}
+
+.booking-text{
+
+font-size:26px;
+font-weight:800;
+
+}
+
+.booking-button{
+
+width:72px;
+height:72px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:#003b95;
+border-radius:14px;
+
+transition:0.2s;
+
+}
+
+.booking-button:hover{
+
+background:#0a4aad;
+transform:translateY(-2px);
+
+}
+
+.booking-button img{
+
+width:50px;
+height:50px;
+
+}
+
+.small-note{
+
+font-size:13px;
+opacity:0.75;
+margin-bottom:24px;
+
+}
+
+.direct-title{
+
+font-size:22px;
+font-weight:800;
+
+margin-bottom:12px;
+
+}
+
+.direct-buttons{
+
+display:flex;
+flex-direction:column;
+gap:10px;
+
+}
+
+.button{
+
+display:block;
+
+padding:16px;
+border-radius:12px;
+
+font-size:19px;
+font-weight:700;
+
+text-align:center;
+text-decoration:none;
+
+transition:0.2s;
+
+}
+
+.tel{
+
+background:#1f1f1f;
+color:white;
+
+}
+
+.tel:hover{
+
+background:#2c2c2c;
+
+}
+
+.whatsapp{
+
+background:#25D366;
+color:white;
+
+}
+
+.whatsapp:hover{
+
+background:#1fb455;
+
+}
+
+@media(max-width:900px){
+
+.hero{
+
+justify-content:center;
+padding:20px;
+
+}
+
+.panel{
+
+margin:0;
+
+}
+
+}
+
+</style>
 </head>
+
 <body>
-  <section class="hero">
-    <div class="panel">
-      <p class="eyebrow">Beskid Niski • Ropki</p>
 
-      <h1>Pod Kątem<br>Ostrym</h1>
+<section class="hero">
 
-      <p class="lead">
-        Dom na wyłączność w Beskidzie Niskim.
-        Spokojne miejsce dla rodzin i grup, w otoczeniu natury.
-      </p>
+<div class="panel">
 
-      <ul class="features">
-        <li>• dom na wyłączność</li>
-        <li>• widok na góry i cisza wokół</li>
-        <li>• idealny na spokojny wyjazd</li>
-        <li>• sprawdź dostępność i ceny online</li>
-      </ul>
+<div class="location">
+BESKID NISKI • ROPKI
+</div>
 
-      <div class="section-label">Sprawdź terminy</div>
+<h1>
+Pod Kątem<br>Ostrym
+</h1>
 
-      <div class="booking-row">
-        <div class="booking-text">Booking.com</div>
+<div class="lead">
+Dom na wyłączność w Beskidzie Niskim.  
+Spokojne miejsce dla rodzin i grup, w otoczeniu natury.
+</div>
 
-        <a
-          class="booking-icon-button"
+<ul class="features">
+
+<li>• dom na wyłączność</li>
+<li>• widok na góry i cisza wokół</li>
+<li>• idealny na spokojny wyjazd</li>
+<li>• sprawdź dostępność i ceny online</li>
+
+</ul>
+
+<div class="section-title">
+Sprawdź terminy
+</div>
+
+<div class="booking-row">
+
+<div class="booking-text">
+Booking.com
+</div>
+
+<a
+class="booking-button"
 href="https://www.booking.com/hotel/pl/pod-katem-ostrym-ropki.pl.html"
 target="_blank"
+>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Booking.com_Icon_2022.svg">
+
+</a>
+
+</div>
+
+<div class="small-note">
+Kliknij ikonę Booking aby sprawdzić dostępność i ceny.
+</div>
+
+<div class="direct-title">
+Rezerwacja bezpośrednia
+</div>
+
+<div class="direct-buttons">
+
+<a
+class="button tel"
+href="tel:+48795151097"
 > 
-<imgsrc="https://upload.wikimedia.org/wikipedia/commons/6/6b/Booking.com_Icon_2022.svg" alt="Booking.com">
-        </a>
-      </div>
+Zadzwoń:795 151 097
+</a>
 
-      <p class="subnote">
-        Kliknij ikonę Booking.com, aby sprawdzić dostępność i ceny.
-      </p>
+<a
+class="button whatsapp"
+href="https://wa.me/48795151097"
+target="_blank"
+> 
+WhatsApp
+</a>
 
-      <div class="direct-title">Rezerwacja bezpośrednia</div>
+</div>
 
-      <div class="direct-buttons">
-        <a class="direct-button tel-button" href="tel:+48795151097">
-          Zadzwoń: 795 151 097
-        </a>
+</div>
 
-        <a
-          class="direct-button wa-button"
-          href="https://wa.me/48795151097"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          WhatsApp
-        </a>
-      </div>
+</section>
 
-      <p class="contact-note">
-        Zadzwoń lub napisz, aby zapytać o termin i szczegóły pobytu.
-      </p>
-    </div>
-  </section>
 </body>
 </html>
