@@ -17,20 +17,18 @@
     html, body {
       margin: 0;
       padding: 0;
+      min-height: 100%;
       font-family: Arial, Helvetica, sans-serif;
-      height: 100%;
       background: #111;
-    }
-
-    body {
       color: #fff;
     }
 
     .hero {
       min-height: 100vh;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.52)),
-        url("dom.jpg") center center / cover no-repeat;
+        linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.55)),
+        url("dom.jpg") center center / cover no-repeat,
+        linear-gradient(135deg, #2a2a2a, #111);
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -39,35 +37,35 @@
 
     .panel {
       width: min(460px, 100%);
-      background: rgba(17, 17, 17, 0.68);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      border-radius: 18px;
+      background: rgba(10, 10, 10, 0.72);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
       padding: 34px 30px;
       box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .eyebrow {
-      display: inline-block;
-      margin-bottom: 12px;
-      font-size: 14px;
+      margin: 0 0 14px;
+      font-size: 15px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.82);
     }
 
     h1 {
-      margin: 0 0 12px;
-      font-size: clamp(34px, 5vw, 56px);
-      line-height: 1.05;
+      margin: 0 0 14px;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 0.98;
       font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
     .lead {
-      margin: 0 0 24px;
-      font-size: 20px;
+      margin: 0 0 22px;
+      font-size: 18px;
       line-height: 1.45;
       color: rgba(255, 255, 255, 0.92);
     }
@@ -77,29 +75,27 @@
       padding: 0;
       list-style: none;
       display: grid;
-      gap: 10px;
+      gap: 12px;
     }
 
     .features li {
       font-size: 17px;
+      line-height: 1.35;
       color: rgba(255, 255, 255, 0.92);
     }
 
     .booking-button {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
       gap: 14px;
       width: 100%;
-      min-height: 68px;
-      padding: 14px 20px;
+      min-height: 74px;
+      padding: 16px 22px;
       background: #003b95;
       color: #fff;
       text-decoration: none;
       border-radius: 14px;
-      font-size: 22px;
-      font-weight: 800;
-      line-height: 1.1;
       box-shadow: 0 14px 30px rgba(0, 32, 90, 0.35);
       transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
@@ -115,28 +111,33 @@
     }
 
     .booking-button img {
-      width: 34px;
-      height: 34px;
+      width: 40px;
+      height: 40px;
       object-fit: contain;
-      border-radius: 6px;
-      flex: 0 0 auto;
+      border-radius: 8px;
       background: #003b95;
+      flex: 0 0 40px;
+      display: block;
     }
 
-    .booking-button span {
-      display: inline-block;
+    .booking-text {
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1.15;
+      text-align: left;
     }
 
     .subnote {
       margin: 14px 0 0;
       font-size: 14px;
+      line-height: 1.4;
       color: rgba(255, 255, 255, 0.76);
     }
 
     .contact {
-      margin-top: 22px;
+      margin-top: 24px;
       font-size: 16px;
-      color: rgba(255, 255, 255, 0.92);
+      color: rgba(255, 255, 255, 0.95);
     }
 
     .contact a {
@@ -159,16 +160,37 @@
         padding: 26px 22px;
       }
 
+      h1 {
+        font-size: 44px;
+      }
+
       .lead {
-        font-size: 18px;
+        font-size: 17px;
       }
 
       .features li {
         font-size: 16px;
       }
 
+      .booking-text {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 560px) {
       .booking-button {
-        font-size: 20px;
+        padding: 14px 16px;
+        min-height: 68px;
+      }
+
+      .booking-button img {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+      }
+
+      .booking-text {
+        font-size: 17px;
       }
     }
   </style>
@@ -176,9 +198,9 @@
 <body>
   <section class="hero">
     <div class="panel">
-      <div class="eyebrow">Beskid Niski • Ropki</div>
+      <p class="eyebrow">Beskid Niski • Ropki</p>
 
-      <h1>Pod Kątem Ostrym</h1>
+      <h1>Pod Kątem<br>Ostrym</h1>
 
       <p class="lead">
         Dom na wyłączność w Beskidzie Niskim.
@@ -200,7 +222,7 @@
         aria-label="Przejdź do rezerwacji na Booking.com"
       >
         <img src="booking-logo.jpg" alt="Booking.com" />
-        <span>Rezerwuj na Booking.com</span>
+        <span class="booking-text">Rezerwuj na<br>Booking.com</span>
       </a>
 
       <p class="subnote">
