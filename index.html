@@ -27,6 +27,10 @@
       background: #111;
     }
 
+    a {
+      text-decoration: none;
+    }
+
     .hero {
       min-height: 100vh;
       display: flex;
@@ -52,6 +56,7 @@
       box-shadow: 0 30px 80px rgba(0,0,0,0.55);
       border: 1px solid rgba(255,255,255,0.08);
       z-index: 3;
+      position: relative;
     }
 
     .location {
@@ -117,6 +122,7 @@
       border-radius: 12px;
       transition: 0.2s;
       text-decoration: none;
+      flex-shrink: 0;
     }
 
     .booking-button:hover {
@@ -128,6 +134,10 @@
       width: 40px;
       height: 40px;
       display: block;
+    }
+
+    .booking-mobile {
+      display: none;
     }
 
     .small-note {
@@ -241,6 +251,10 @@
       display: block;
     }
 
+    .mobile-gallery {
+      display: none;
+    }
+
     .lightbox {
       position: fixed;
       inset: 0;
@@ -312,6 +326,10 @@
       right: -70px;
     }
 
+    .sticky-bar {
+      display: none;
+    }
+
     @media (max-width: 1100px) {
       .gallery-stack {
         width: 250px;
@@ -349,6 +367,252 @@
 
       .lightbox-next {
         right: 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background: #0f1113;
+      }
+
+      .hero {
+        min-height: auto;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 88px 16px 24px;
+        background:
+          linear-gradient(to bottom, rgba(0,0,0,0.30), rgba(0,0,0,0.72)),
+          url("dom.jpg") center/cover no-repeat;
+      }
+
+      .panel {
+        width: 100%;
+        max-width: 540px;
+        margin-right: 0;
+        padding: 28px 20px 22px;
+        border-radius: 26px;
+        background: rgba(15,15,15,0.58);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 24px 60px rgba(0,0,0,0.42);
+      }
+
+      .location {
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        margin-bottom: 14px;
+      }
+
+      h1 {
+        font-size: 56px;
+        line-height: 0.95;
+        margin-bottom: 18px;
+      }
+
+      .lead {
+        font-size: 18px;
+        line-height: 1.55;
+        margin-bottom: 22px;
+      }
+
+      .features {
+        margin-bottom: 28px;
+      }
+
+      .features li {
+        font-size: 17px;
+        margin-bottom: 10px;
+      }
+
+      .section-title {
+        font-size: 15px;
+        margin-bottom: 12px;
+      }
+
+      .booking-row {
+        display: none;
+      }
+
+      .booking-mobile {
+        display: block;
+        margin-bottom: 18px;
+      }
+
+      .booking-mobile-btn {
+        display: block;
+        width: 100%;
+        background: #0a58ca;
+        color: #fff;
+        text-align: center;
+        padding: 16px 18px;
+        border-radius: 14px;
+        font-size: 19px;
+        font-weight: 800;
+        box-shadow: 0 8px 22px rgba(10, 88, 202, 0.28);
+      }
+
+      .small-note {
+        display: none;
+      }
+
+      .direct-title {
+        font-size: 22px;
+        margin-bottom: 14px;
+      }
+
+      .direct-buttons {
+        gap: 12px;
+      }
+
+      .button {
+        padding: 16px;
+        border-radius: 14px;
+        font-size: 20px;
+      }
+
+      .tel {
+        background: #1a1d20;
+        border: 1px solid rgba(255,255,255,0.10);
+      }
+
+      .mobile-gallery {
+        display: block;
+        width: 100%;
+        max-width: 540px;
+        margin: 18px auto 96px;
+        padding: 0 16px;
+      }
+
+      .mobile-gallery-title {
+        font-size: 24px;
+        font-weight: 800;
+        margin-bottom: 14px;
+      }
+
+      .mobile-active-card {
+        width: 100%;
+        height: 260px;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 20px 48px rgba(0,0,0,0.28);
+        border: 1px solid rgba(255,255,255,0.08);
+        margin-bottom: 12px;
+        background: rgba(255,255,255,0.04);
+      }
+
+      .mobile-active-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .mobile-thumbs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .mobile-thumb {
+        height: 100px;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 2px solid transparent;
+        background: rgba(255,255,255,0.04);
+        cursor: pointer;
+        padding: 0;
+        opacity: 0.92;
+      }
+
+      .mobile-thumb.active {
+        border-color: rgba(255,255,255,0.95);
+      }
+
+      .mobile-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .sticky-bar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9998;
+        display: block;
+        background: rgba(10,10,10,0.92);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-top: 1px solid rgba(255,255,255,0.08);
+        padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      }
+
+      .sticky-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 8px;
+        max-width: 540px;
+        margin: 0 auto;
+      }
+
+      .sticky-btn {
+        display: block;
+        text-align: center;
+        padding: 13px 8px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 800;
+        color: #fff;
+      }
+
+      .sticky-booking {
+        background: #0a58ca;
+      }
+
+      .sticky-phone {
+        background: #1b1f23;
+        border: 1px solid rgba(255,255,255,0.10);
+      }
+
+      .sticky-whatsapp {
+        background: #25D366;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero {
+        padding: 72px 14px 20px;
+      }
+
+      .panel {
+        padding: 24px 18px 20px;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .lead {
+        font-size: 17px;
+      }
+
+      .features li {
+        font-size: 16px;
+      }
+
+      .button,
+      .booking-mobile-btn {
+        font-size: 18px;
+      }
+
+      .mobile-active-card {
+        height: 220px;
+      }
+
+      .mobile-thumb {
+        height: 88px;
       }
     }
   </style>
@@ -409,6 +673,17 @@
       </a>
     </div>
 
+    <div class="booking-mobile">
+      <a
+        class="booking-mobile-btn"
+        href="https://www.booking.com/hotel/pl/pod-katem-ostrym-ropki.pl.html"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Sprawdź dostępność i ceny – Booking.com
+      </a>
+    </div>
+
     <div class="small-note">
       Kliknij ikonę Booking aby sprawdzić dostępność i ceny.
     </div>
@@ -416,7 +691,8 @@
     <div class="direct-title">Rezerwuj bezpośrednio!</div>
 
     <div class="direct-buttons">
-<a href="tel:+48795151097">Zadzwoń: 795 151 097</a>
+      <a class="button tel" href="tel:+48795151097">Zadzwoń: 795 151 097</a>
+
       <a
         class="button whatsapp"
         href="https://wa.me/48795151097"
@@ -429,6 +705,54 @@
   </div>
 
 </section>
+
+<section class="mobile-gallery">
+  <div class="mobile-gallery-title">Zobacz wnętrze</div>
+
+  <div class="mobile-active-card" id="mobileActiveCard">
+    <img id="mobileActiveInterior" src="dom2.jpg" alt="Wnętrze domu">
+  </div>
+
+  <div class="mobile-thumbs">
+    <button class="mobile-thumb active" data-index="0" type="button">
+      <img src="dom2.jpg" alt="Wnętrze 1">
+    </button>
+
+    <button class="mobile-thumb" data-index="1" type="button">
+      <img src="dom3.jpg" alt="Wnętrze 2">
+    </button>
+
+    <button class="mobile-thumb" data-index="2" type="button">
+      <img src="dom4.jpg" alt="Wnętrze 3">
+    </button>
+  </div>
+</section>
+
+<div class="sticky-bar">
+  <div class="sticky-inner">
+    <a
+      class="sticky-btn sticky-booking"
+      href="https://www.booking.com/hotel/pl/pod-katem-ostrym-ropki.pl.html"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Booking
+    </a>
+
+    <a class="sticky-btn sticky-phone" href="tel:+48795151097">
+      Zadzwoń
+    </a>
+
+    <a
+      class="sticky-btn sticky-whatsapp"
+      href="https://wa.me/48795151097"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      WhatsApp
+    </a>
+  </div>
+</div>
 
 <div class="lightbox" id="lightbox">
   <div class="lightbox-inner">
@@ -449,6 +773,10 @@
   const activeCard = document.getElementById("activeCard");
   const thumbs = document.querySelectorAll(".thumb");
 
+  const mobileActiveInterior = document.getElementById("mobileActiveInterior");
+  const mobileActiveCard = document.getElementById("mobileActiveCard");
+  const mobileThumbs = document.querySelectorAll(".mobile-thumb");
+
   const lightbox = document.getElementById("lightbox");
   const lightboxImage = document.getElementById("lightboxImage");
   const lightboxClose = document.getElementById("lightboxClose");
@@ -457,12 +785,27 @@
 
   function setActiveImage(index) {
     currentIndex = index;
-    activeInterior.src = images[index];
-    lightboxImage.src = images[index];
+
+    if (activeInterior) {
+      activeInterior.src = images[index];
+    }
+
+    if (mobileActiveInterior) {
+      mobileActiveInterior.src = images[index];
+    }
+
+    if (lightboxImage) {
+      lightboxImage.src = images[index];
+    }
 
     thumbs.forEach((thumb) => thumb.classList.remove("active"));
     if (thumbs[index]) {
       thumbs[index].classList.add("active");
+    }
+
+    mobileThumbs.forEach((thumb) => thumb.classList.remove("active"));
+    if (mobileThumbs[index]) {
+      mobileThumbs[index].classList.add("active");
     }
   }
 
@@ -472,10 +815,25 @@
     });
   });
 
-  activeCard.addEventListener("click", () => {
-    lightbox.classList.add("open");
-    lightboxImage.src = images[currentIndex];
+  mobileThumbs.forEach((thumb, index) => {
+    thumb.addEventListener("click", () => {
+      setActiveImage(index);
+    });
   });
+
+  if (activeCard) {
+    activeCard.addEventListener("click", () => {
+      lightbox.classList.add("open");
+      lightboxImage.src = images[currentIndex];
+    });
+  }
+
+  if (mobileActiveCard) {
+    mobileActiveCard.addEventListener("click", () => {
+      lightbox.classList.add("open");
+      lightboxImage.src = images[currentIndex];
+    });
+  }
 
   lightboxClose.addEventListener("click", () => {
     lightbox.classList.remove("open");
